@@ -34,7 +34,7 @@
                         @click="nextSlideClick"></div>
 
                     <div v-for="(slide, i) in slides" 
-                         :class="slideClass">
+                         :class="(i === activeSlideIndex ? 'active ' : '') + slideClass">
 
                         <img :src="slide.image" 
                              :alt="slide.title" />
