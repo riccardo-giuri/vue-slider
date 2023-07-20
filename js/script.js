@@ -51,6 +51,10 @@ Vue.createApp({
             else {
                 this.activeSlideIndex++;
             }
+        },
+
+        slideClick(index) {
+            this.activeSlideIndex = index;
         }
     }
 }
