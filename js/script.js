@@ -30,7 +30,8 @@ Vue.createApp({
             ],
 
             slideClass: "thumb",
-            activeSlideIndex: 0
+            activeSlideIndex: 0,
+            autoplay: null
         }
     },
 
@@ -55,7 +56,19 @@ Vue.createApp({
 
         slideClick(index) {
             this.activeSlideIndex = index;
+        },
+
+        startAutoplay() {
+            this.autoplay = setInterval(this.nextSlideClick, 3000);
+        },
+
+        stopAutoplay() {
+            clearInterval(this.autoplay);
         }
-    }
+    },
+
+    mounted() {
+        this.startAutoplay();
+    } 
 }
 ).mount("#app");
